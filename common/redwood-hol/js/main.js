@@ -37,13 +37,14 @@ $(document).ready(function () {
             articleElement = addTargetBlank(articleElement); //setting target for all ahrefs to _blank
             articleElement = allowCodeCopy(articleElement); //adds functionality to copy code from codeblocks
             updateHeadContent(selectedTutorial); //changing document head based on the manifest
-            updateTrialUrl()
+            
         }).done(function () {
             $("main").html(articleElement); //placing the article element inside the main tag of the Tutorial template
             setTimeout(setupContentNav, 0); //sets up the collapse/expand button and open/close section feature
             collapseSection($("#module-content h2:not(:eq(0))"), "hide"); //collapses all sections by default
             $('#openNav').click(); //open the right side nav by default
             setupLeftNav();
+            updateTrialUrl()
         }).fail(function () {
             alert(selectedTutorial.filename + ' not found! Please check that the file is available in the location provided in the manifest file.');
         });
@@ -100,7 +101,7 @@ function setupRightNav(manifestFileContent) {
             }
             $(li).appendTo($('#mySidenav ul'));
             /* for accessibility */
-            
+
             $(li).keydown(function (e) {
                 if (e.keyCode === 13 || e.keyCode === 32) { //means enter and space
                     e.preventDefault();
