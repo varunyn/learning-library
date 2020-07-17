@@ -13,6 +13,8 @@ This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Ti
 
 In this section, you'll fill out the registration form at <a class="trial-link" href="https://myservices.us.oraclecloud.com/mycloud/signup" target="_trial">Free Account</a>
 
+- Check for code changes 
+
 1.  Click on the "Start for free" button and enter the appropriate information to create your account.
     * Enter the same **email address** you used to register for Oracle Open World / Oracle Code One. A popup should appear recognizing your email. If not, the registration form will ask for additional information later.
     * Select your **country/territory**.
