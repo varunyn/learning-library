@@ -255,7 +255,7 @@ function setupLeftNav() {
     let toc = $("#toc").tocify({
         selectors: "h2, h3, h4"
     }).data("toc-tocify");
-    toc.setOptions({ extendPage: false, smoothScroll: false, scrollTo: anchorOffset, highlightDefault: true, showEffect: "fadeIn" });
+    toc.setOptions({ extendPage: false, smoothScroll: false, scrollTo: anchorOffset, highlightDefault: true, showEffect: "fadeIn",scrollTo: "64" });
 
     $('.tocify-item').each(function () {
         let itemName = $(this).attr('data-unique');

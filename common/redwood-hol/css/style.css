@@ -819,7 +819,7 @@ blockquote {
 #toc.scroll {
     position: fixed;
     height: 100%;
-    top: 0;
+    top: 64px;
     margin-top: 0;
     width: 100%;
     overflow-y: auto;
