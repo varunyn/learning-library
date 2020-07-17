@@ -37,6 +37,7 @@ $(document).ready(function () {
             articleElement = addTargetBlank(articleElement); //setting target for all ahrefs to _blank
             articleElement = allowCodeCopy(articleElement); //adds functionality to copy code from codeblocks
             updateHeadContent(selectedTutorial); //changing document head based on the manifest
+            updateTrialUrl()
         }).done(function () {
             $("main").html(articleElement); //placing the article element inside the main tag of the Tutorial template
             setTimeout(setupContentNav, 0); //sets up the collapse/expand button and open/close section feature
@@ -389,4 +390,32 @@ function renderVideos(articleElement) {
         $(this).remove();
     });
     return articleElement;
+}
+
+function updateTrialUrl(){
+    let searchParams = new URLSearchParams(window.location.search);
+    var sourceType = searchParams.get("sourceType");
+    var intcmp = searchParams.get("intcmp");
+    var sc = searchParams.get("SC");
+    var pcode = searchParams.get("pcode");
+
+    if(sourceType || intcmp || sc || pcode) {
+      let trialLink = "https://myservices.us.oraclecloud.com/mycloud/signup?language=en";
+      if(sourceType) {
+        trialLink += "&sourceType=" + sourceType;
+      }
+      if(intcmp) {
+        trialLink += "&intcmp=" + intcmp;
+      }
+      if(sc) {
+        trialLink += "&SC=" + sc;
+      }
+      if(pcode) {
+        trialLink += "&pcode=" + pcode;
+      }
+      let linkList = document.getElementsByClassName("trial-link");
+      for (let link of linkList) {
+        link.setAttribute('href', trialLink);
+      }
+    }
 }
