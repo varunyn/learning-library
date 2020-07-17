@@ -94,12 +94,13 @@ function setupRightNav(manifestFileContent) {
                 location.href = queryParam + shortTitle;
             });
             $(li).text(tutorial.title); //The title specified in the manifest appears in the side nav as navigation
-            if (window.location.search.split(queryParam)[1] === shortTitle) { //the selected class is added if the title is currently selected
+            if (window.location.search.split(queryParam)[1].split("&")[0] === shortTitle) { //the selected class is added if the title is currently selected
                 $(li).attr("class", "selected");
                 selectedTutorial = tutorial;
             }
             $(li).appendTo($('#mySidenav ul'));
             /* for accessibility */
+            
             $(li).keydown(function (e) {
                 if (e.keyCode === 13 || e.keyCode === 32) { //means enter and space
                     e.preventDefault();
