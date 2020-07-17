@@ -415,9 +415,13 @@ function updateTrialUrl(){
       if(pcode) {
         trialLink += "&pcode=" + pcode;
       }
-      let linkList = document.getElementsByClassName("trial-link");
-      for (let link of linkList) {
-        link.setAttribute('href', trialLink);
+      sessionStorage.setItem('trialLink', trialLink);  
+    }
+    let data = sessionStorage.getItem('trialLink');
+    if (data!= null) {
+    let linkList = document.getElementsByClassName("trial-link");
+    for (let link of linkList) {
+        link.setAttribute('href', data);
       }
     }
 }
